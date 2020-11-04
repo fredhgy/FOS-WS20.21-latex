@@ -34,7 +34,7 @@
 %
 
 \newcounter{lecnum}
-%\renewcommand{\thepage}{\thelecnum-\arabic{page}}
+\renewcommand{\thepage}{\thelecnum-\arabic{page}}
 %\renewcommand{\thesection}{\thelecnum.\arabic{section}}
 %\renewcommand{\theequation}{\thelecnum.\arabic{equation}}
 %\renewcommand{\thefigure}{\thelecnum.\arabic{figure}}
@@ -354,6 +354,10 @@
 
 \newcommand{\partialtt}{
     \frac{\partial^2}{\partial t^2}
+}
+
+\newcommand{\labtag}[1]{
+    \label{tag: #1}\tag{#1}
 }
 
 
