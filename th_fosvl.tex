@@ -1,0 +1,243 @@
+\input{core.tex}
+\begin{document}
+    \lecture{1}{20.11.04}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:theory part}{WS 2020/21}
+
+    \setcounter{section}{-1}
+    \section{General remarks}
+        Exercises: 50\% handed via Moodle in hand-written PDF
+
+        (most-likely) Oral(digital) exam
+
+        Communication via Moodle make sure you check your e-mail account to which Moodle sends e-mails!
+
+        \underline{Content(theory part):}
+
+        I. Basic Electrodynamics,
+
+        II. Light-atom interaction in the semi-classical picture(description),
+
+        III. Quantization of electromagnetic fields,
+        \# 09:53-09:57
+
+    \section{Basic Electrodynamics}
+    \setcounter{subsection}{-1}
+        \subsection{Maxwell equations}
+
+            $$
+            \begin{aligned}
+                \vecnabla \cdot \vec{D} &= \rho_f \nn
+                \vecnabla \cdot \vec{B} &= 0 \nn
+                \vecnabla \times \vec{E} &= - \partialt \vec{B} \nn
+                \vecnabla \times \vec{H} &= \partialt \vec{D} + \vec{j}_f \nn
+            \end{aligned}
+            $$
+
+            and:
+            $$
+            \begin{aligned}
+                \vec{D} = \varepsilon \vec{E} + \vec{P} \nn
+                \vec{H} = \frac{1}{\mu} \vec{B} + \vec{M} \nn
+            \end{aligned}
+            $$
+
+            for $\vec{P} = 0$:
+            $$
+            \vec{D} = \varepsilon \vec{E}
+            $$
+
+            where $\varepsilon = \varepsilon_0\left(1+\chi_e\right)$
+
+            alterative: $\vec{D} = \varepsilon_0 \cdot \varepsilon_p \cdot \vec{E} $
+
+            {\sl Don't mess up source!}
+
+            \longline
+
+            Lorentz force law: \# 10:15-10:20
+            $$
+            \vec{F} = q \left(\vec{E} + \vec{v} \times \vec{B}\right)
+            $$
+            {\sl Setting charge particals and back field}
+
+        \subsection{Potential picture and gauge transformations}
+            \# 10:21
+
+            While due to Faraday's law the electric field can not be written as the gradient of a (scalar) potential as in
+            electrostatics, the magnetic field can still be written as the curl of a vector potential:
+
+            \begin{align}
+                \vec{B} = \vec{\nabla} \times \vec{A}  \labtag{I.1} \nonumber
+            \end{align}
+
+            Insertion of \ref{tag: I.1} into Faraday's law yields
+            \begin{align}
+                \vecnabla \times \vec{E} = - \partialt{B} \txtoneq{(I.1)} - \partialt\left(\vec{\nabla}\times \vec{A}\right) \nonumber \\
+                \rightarrow   \vecnabla \times \vec{E} + \vecnabla \times \left(\partialt \vec{A}\right) = 0 \nonumber \\
+                \rightarrow \vecnabla \times \left(\vec{E} + \partialt \vec{A}\right) = 0 \labtag{I.2}
+            \end{align}
+
+            \# 10:30
+
+            we thus obtain a new quatitiy with a vanishing curl which thus can be written as the 
+            gradient of a scalar potential:
+            \begin{align}
+                \rightarrow \vec{E} + \partialt\vec{A} =: - \vec{\nabla}\phi \labtag{I.3} \nonumber
+            \end{align}
+            (note, the choice of the negative sign is only convention)
+
+            This yields in turn for the electric fields:
+            \begin{align}
+                \vec{E} = - \left(\vecnabla \phi + \partialt \vec{A} \right) \labtag{I.4}
+            \end{align}
+
+            Note, when using the scalar potential$\phi$ and the vector potential $\vec{A}$, two of 
+            the Maxwell equations are automatically fulfilled, as they were used in the deviations of 
+            the potentials. $\left(\vec{\nabla}\cdot\vec{B} = 0, \vecnabla \times \vec{E} = -\partialt \vec{B}\right)$
+
+            \longline
+
+            Potential picture / description: using $\phi$ and $\vec{A}$
+
+            Field picture / description: using $ \vec{E} $ and $\vec{B}$
+
+            Maxwell equations in potential picture:
+            \begin{align}
+                \text{(i) Gauss:    } \vecnabla \cdot \vec{E} = \frac{1}{\varepsilon_0} \rho \nn
+                \rightarrow - \vec{\nabla} \left(\vec{\nabla}\phi + \partialt \vec{A} \right) = \frac{1}{\varepsilon_0} \rho \nn
+                \vecnabla^2\phi + \partialt\left(\vec{\nabla}\cdot\vec{A}\right) =  -  \frac{1}{\varepsilon_0} \rho  \labtag{I.5}
+            \end{align}
+
+
+
+
+
+
+
+
+
+
+            \lecture{2}{20.11.05}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:theory part}{WS 2020/21}
+
+            \begin{align}
+                \text{(ii) Ampere: }  \vecnabla \times \vec{B} &= \mu_0 \vec{j} + \mu_0 \varepsilon_0 \partialt \vec{E} \nn
+                \vec{\nabla} \times \left(\vec{\nabla} \times \vec{A}\right)  &= \mu_0 \vec{j} + \mu_0 \varepsilon_0 \left(\vec{\nabla} \phi + \partialt \vec{A}\right) \nn
+                &=  \mu_0 \vec{j} + \mu_0 \varepsilon_0  \left(\vec{\nabla} \partialt \phi + \partialtt \vec{A}\right) \nonumber
+            \end{align}
+            
+            Remind: $ \vecnabla \times \left(\vecnabla \times \vec{f}\right) = \vec{\nabla} \left(\vecnabla \cdot \vec{f}\right) - \nabla^2 \vec{f}$
+
+            \begin{align}
+                \rightarrow \vec{\nabla}\cdot \left(\vec{\nabla}\cdot \vec{A}\right) - \nabla^2 \vec{A} = \mu_0 \vec{j} - \mu_0\varepsilon_0\left(\vec{\nabla}\partialt\phi + \partialtt \vec{A}\right) \nn
+                \left(\nabla^2 \vec{A} - \mu_0\varepsilon_0 \partialtt\vec{A}\right) - \vec{\nabla}\left(\vec{\nabla}\cdot \vec{A} + \mu_0\varepsilon_0 \partialt \phi\right) = -\mu_0 \vec{j} \labtag{I.6}
+            \end{align}
+
+            Besides the fact that the equations determining the potentials do not look very nice, the problem of finding 6 field components has reduced to 4 potential components.
+
+            $E_x,E_y,E_z,B_x,B_y,B_z \longrightarrow A_x,A_y,A_z,\phi$
+
+            {\sl field can be measured and unique, but potential has a kind of freedom.}
+
+            Already from electro- and magnetostatics it is , however, known that the definition of the potentials for give E and B fields is not unique!
+
+            Which freedom in choosing the potentials do we have in electrodynamics:
+
+            \begin{align}
+                \vec{A}^\prime = \vec{A} + \vec{a} \nn
+                \phi^\prime = \phi + f \nonumber
+            \end{align}    
+
+            using \ref{tag: I.1}, i.e. $\vec{B} = \vec{\nabla}\times\vec{A}$,we found
+            $$
+            \vecnabla \times \vec{A}^\prime \txtoneq{!} \vec{\nabla}\times\vec{A} \Rightarrow \vec{\nabla}\times\vec{a} = 0 \Rightarrow \vec{a} = \vec{\nabla}\phi 
+            $$
+
+            using \ref{tag: I.4}, i.e. $\vec{E} = - \left(\vec{\nabla}\phi + \partialt \vec{A}\right)$
+            \begin{align}
+                \vec{\nabla}\phi^\prime + \partialt \vec{A}^\prime &\txtoneq{!} \vec{\nabla}\phi + \partialt\vec{A}\nn
+                \vec{\nabla}\phi + \vec{\nabla}f + \partialt\vec{A} + \partialt\vec{a} &\txtoneq{!} \vec{\nabla} \partialt\vec{A}\nn
+                \vecnabla f + \partialt\vec{a} = 0 \Rightarrow \vec{\nabla}f + \partialt\left(\vec{\nabla}\phi\right) &= 0\nn
+                \Rightarrow \vec{\nabla} \left(f + \partialt \phi\right) &= 0\nn
+                \Rightarrow f &= - \partialt \phi \labtag{I.7}
+            \end{align}
+            \# 09:43 constant zero
+
+            in fact, the result remian unchanged, if we have $f^\prime = f + c(t)$
+            \# 09:45
+
+            and gauge freedom: \# 09:47
+            \begin{align}
+                \vec{A}^\prime = \vec{A} + \vec{\nabla}\phi \nn
+                \phi^\prime = \phi - \partialt \phi \labtag{I.8}
+            \end{align}
+            
+            In other words, the two vector potentials $\vec{A}$ and$\vec{A}^\prime$ yields the same E and B field, if the scalar potential $\phi$ is changed accordingly, and vice versa.
+
+            Equation \ref{tag: I.8} defines thus so-called gauge transformations, the freedom to choose the gauge potential $\phi$ is known as gauge invariance(or gauge freedom).
+            
+            \# 09:52-09:57
+
+            Where there is in principle an infinite number of possible gauge transformations, tweo special choices for the gauge potential have proven most popular.
+
+            \underline{(I)Coulomb gauge}
+
+            Choice of the potentials such that
+            $$
+            \vec{\nabla}\cdot \vec{A} \txtoneq{!} 0
+            $$
+            with this choice one obtains
+            \begin{align}
+                \vec{\nabla}^2 \phi + \partialt\left(\vecnabla \cdot \vec{A}\right) \txtoneq{\ref{tag: I.5}}  - \frac{\rho}{\varepsilon_0}  \Rightarrow \vec{\nabla}^2 \phi =  - \frac{\rho}{\varepsilon_0} \labtag{I.9} \nonumber
+            \end{align}
+
+            which is identical to the Poisson equation know from electrostatics.
+
+            However, for the vector potential, only one term in Equation \ref{tag: I.6} vanishes:
+            \begin{align}
+                \left(\vec{\nabla}^2\vec{A} - \mu_0 \varepsilon_0 \partialtt \vec{A}\right) = -\mu_0 \vec{j} + \mu_0\varepsilon_0 \vec{\nabla}\left(\partialt \phi\right) \nonumber
+            \end{align}
+
+            introducing the d'Alembert operator \# 10:09
+            \begin{align}
+                \square := \vec{\nabla}^2 - \mu_0 \varepsilon_0 \partialtt = \Delta - \frac{1}{c^2}\partialtt \nonumber
+            \end{align}
+
+            we obtain
+            \begin{align}
+                \square \vec{A}=-\mu_0\vec{j} + \mu_0\varepsilon_0\vec{\nabla}\left(\partialt \phi\right) \labtag{I.10} \nonumber
+            \end{align}
+            
+            \# 10:13
+            {\sl using only in vacuum}
+
+            Note: in fact the d'Alembert operator is, in practice not always uniquely defined the way given above, but in a linear, homogeneous
+            medium one implies $\varepsilon\mu$ instead of $\varepsilon_0\mu_0$.
+
+            (In fact it can be shown that the vector potential in Coulomb gauge depends solely on the transversal component of the current.)
+
+            \underline{(II) Lorenz gauge}
+            \begin{align}
+                \vec{\nabla}\cdot \vec{A} \txtoneq{!} -\mu_0 \varepsilon_0 \partialt \phi \nonumber
+            \end{align}
+            From Eq.\ref{tag: I.5} one gets:
+            \begin{align}
+                \vec{\nabla}^2 \phi + \partialt\left(\vec{\nabla}\cdot \vec{A}\right) = -\frac{\rho}{\varepsilon_0} \nn
+                \Rightarrow \vec{\nabla}^2 \phi - \mu_0\varepsilon_0 \partialtt\phi = -\frac{\rho}{\varepsilon_0} \nn
+                \rightarrow \square\phi = -\frac{\rho}{\varepsilon_0} \labtag{I.11} \nonumber
+            \end{align}
+
+            and with Eq.\ref{tag: I.6}:
+            \begin{align}
+                \left(\vec{\nabla}^2\vec{A} -  \mu_0\varepsilon_0 \partialtt\vec{A}\right) - \vec{\nabla}\left(\vec{\nabla}\cdot \vec{A} +  \mu_0\varepsilon_0 \partialt\phi\right) = - \mu_0 \vec{j} \nn
+                \rightarrow \square \vec{A} = -\mu_0 \vec{j} \labtag{I.12} \nonumber
+            \end{align}
+            \# 10:35-10:38 different between two gauge
+
+            Note: in Lorenz gauge the potentials $\vec{A}$ and $\phi$ are completely decoupled and one depends only on the charge density,
+            the other only on the current.\\
+            Furthermore, note the symmetry of the determining equations for the scalar and the vector potentials.
+
+            While for computations, either gauge may be more efficient, "easier", ..., the Lorenz gauge is typically more appropriate for a deeper understanding of electrodynamics and relativity.
+            
+            Important: in fact the Lorenz gauge condition does not define the scalar and vector potential uniquely! Thus the Lorenz gauge is actually a gauge class!
+
+\end{document}
