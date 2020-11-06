@@ -19,10 +19,14 @@
         III. Quantization of electromagnetic fields,
         \# 09:53-09:57
 
+
+
+
+
+
     \section{Basic Electrodynamics}
     \setcounter{subsection}{-1}
         \subsection{Maxwell equations}
-
             $$
             \begin{aligned}
                 \vecnabla \cdot \vec{D} &= \rho_f \nn
@@ -58,6 +62,11 @@
             \vec{F} = q \left(\vec{E} + \vec{v} \times \vec{B}\right)
             $$
             {\sl Setting charge particals and back field}
+
+
+
+
+
 
         \subsection{Potential picture and gauge transformations}
             \# 10:21
@@ -239,5 +248,170 @@
             While for computations, either gauge may be more efficient, "easier", ..., the Lorenz gauge is typically more appropriate for a deeper understanding of electrodynamics and relativity.
             
             Important: in fact the Lorenz gauge condition does not define the scalar and vector potential uniquely! Thus the Lorenz gauge is actually a gauge class!
+
+
+
+
+
+
+
+
+
+
+            \lecture{3}{20.11.06}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:theory part}{WS 2020/21}
+
+            The equation of motion of charged particles in electromagnetic fields is guided by the Lorentz force law that evidently also can be expressed in terms of the potentials(instead of fields):
+
+            \begin{align}
+                \vec{F} = \frac{d\vec{p}}{d\vec{t}} = q\cdot \left(\vec{E} + \vec{v}\times\vecb\right) \labtag{I.13} \nonumber
+            \end{align}
+
+            where $\vec{F}$: force, $\vec{p}$: momentum, $\vec{v}$: velocity, q: charge of the particles.
+
+            \begin{align}
+                \rightarrow \vec{F} = q\cdot \left[-\vecnabla \phi - \partialt \vec{A} + \vec{v} \times \left(\vecnabla \times \vec{A}\right)\right] \labtag{I.14} \nonumber
+            \end{align}
+
+            using the product rule: $ \vec{\nabla}\cdot\left(\vec{f}\cdot \vec{g}\right) = \vec{f}\times\left(\vecnabla\times\vec{g}\right) + \vec{g} \times \left(\vecnabla\times\vec{f}\right) + \left(\vec{f}\cdot \vec{\nabla}\right)\cdot \vec{g} + \left(\vec{g}\cdot \vecnabla\right)\cdot \vec{f} $
+
+            (here$\vec{f}\doteq \vec{v}; \vec{g}\doteq \vec{A}$)
+
+            \begin{align}
+                \vec{v}\times\left(\vec{\nabla}\times\vec{A}\right) = \vecnabla\cdot\left(\vec{v}\cdot\vec{A}\right) - \vec{A}\times \left(\vecnabla\times\vec{v}\right)-\left(\vec{v}\cdot \vec{\nabla}\right)\cdot \vec{A} - \left(\vec{A}\cdot\vecnabla\right)\cdot \vec{v} \labtag{I.15}
+            \end{align}
+
+            where
+            \begin{align}
+                \vecnabla\times\vec{A}: \vec{v} = \frac{d_x}{dt}\hate_x + \frac{d_y}{dt}\hate_y + \frac{d_z}{dt}\hate_z \nn
+                \rightarrow \vecnabla \times \veca \rightarrow \text{ term of the types} \nn
+                \frac{d}{d_{x_i}} \cdot \frac{d_{x_j}}{dt} = \frac{d}{dt} \frac{d_{x_j}}{d_{x_i}} = 0 \text{ for }i\neq j \nn
+                \rightarrow \vecnabla \times \veca = 0 \nonumber
+            \end{align}
+
+            and 
+            \begin{align}
+                \vec{A}\cdot \vec{\nabla} = A_x \cdot \frac{d}{d_x} + A_y \cdot \frac{d}{d_y} + A_z \cdot \frac{d}{d_z} \nn
+                \left(\veca\cdot\vecnabla\right)\cdot\vec{v} = A_x \frac{d}{d_x}\frac{d_x}{dt} + \cdots \nn
+                = \frac{d}{dt}\frac{d_x}{d_x} = 0 \nonumber
+            \end{align}
+
+            so with \ref{tag: I.15}
+            \begin{align}
+                \vec{v}\times\left(\vecnabla\times\veca\right) = \vecnabla \cdot \left(\vec{v}\cdot \veca\right) - \left(\vec{v}\cdot \vecnabla\right)\cdot \vec{A} \labtag{I.16}\nonumber
+            \end{align}
+
+            and with \ref{tag: I.14}
+            \begin{align}
+                \vec{F} = q \cdot \left[-\vecnabla \phi - \partialt \veca + \vec{\nabla}\cdot \left(\vec{v}\cdot \veca\right) - \left(\vec{v}\cdot\vecnabla\right)\cdot\veca    \right] \nn
+                = -q \left[\partialt \veca +\left(\vec{v} \cdot \vecnabla\right)\cdot \vec{A} + \vecnabla \left(\phi - \vec{v}\cdot\vec{A}\right)\right] \labtag{I.17} \nonumber
+            \end{align}
+
+            \# 11:44
+            where $\partialt \veca +\left(\vec{v} \cdot \vecnabla\right)\cdot \vec{A}$ is total derivative $\frac{d\veca}{dt}$
+
+            \begin{align}
+                \vec{F}= \frac{d\vec{p}}{dt} = -q \left[\frac{d\veca}{dt} + \vec{\nabla}\left(\phi - \vec{v}\cdot\veca\right)\right] \nn
+                = - \frac{d}{dt}\left(q\cdot\vec{A}\right)  - q\vecnabla \left(\phi - \vec{v}\cdot \veca    \right) \labtag{I.19} \nonumber
+            \end{align}
+
+            \begin{align}
+                \rightarrow \frac{d}{dt} \left(\vec{p} + q \cdot \vec{A}\right) = - q \vecnabla \left(\phi - \vec{v}\cdot\veca\right) \labtag{I.20} \nonumber
+            \end{align}
+
+            \# 11:48
+            Remind classical mechanics: motion of a neutral particle in some potential V:
+            \begin{align}
+                \frac{d\vec{p}}{dt} =-\vecnabla V \labtag{I.21} \nonumber
+            \end{align}
+
+            This yields the formal(!) analogy
+            \begin{align}
+                \vec{p} \rightarrow \vec{p} + q\cdot \vec{A} =: \vec{p}_{\text{con}} (= \Pi) \nonumber \labtag{I.22a}
+            \end{align}
+            where $\vec{p}_{\text{con}}$ is called canonical momentum(gauge dependent), and 
+            \begin{align}
+                V \rightarrow q\cdot\left(\phi - \vec{v}\veca\right) \nonumber \labtag{I.22b}
+            \end{align}
+
+            \#11:55-11:58
+
+            and $\vec{p}$ is thus called mechanical momentum(observable). \\
+            The mechanical momentum is a physical observable, while the canonical momentum is gauge dependent! and thus can not 
+            be an observable!
+        
+
+
+
+
+        \subsection{Homogeneous wave Equation}
+            In the following we consider electrodynamic fields in uncharged isolators that form a linear homogenous medium, so there are 
+            no free charges or currents.
+
+            Maxwell equations in this case:
+            \begin{align}
+                &\text{(a):} \vec{\nabla}\cdot \vecd = 0 \Rightarrow \vec{\nabla}\vece = 0 \labtag{I.23a} \nn
+                &\text{(b):} \vecnabla \cdot \vecb = 0 \labtag{I.23b} \nn
+                &\text{(c):}\vecnabla \times \vece = - \partialt \vec{B} \labtag{I.23c}\nn
+               \vec{\nabla}\times \vech = \partialt \vecd \rightarrow \frac{1}{\mu}\vecnabla \times\vec{B} =\varepsilon \partialt \vec{E} \Rightarrow   &\text{(d):}  \vec{\nabla}\times \vech = \mu\varepsilon  \partialt \vec{E} \labtag{I.23d} \nonumber
+            \end{align}
+
+            The coupled equations \ref{tag: I.23c} and \ref{tag: I.23d} can be decoupled by applying the curl on them:
+            
+            (c):
+            \begin{align}
+                \vec{\nabla}\times\left(\vecnabla\times\vece\right) \txtoneq{\ref{tag: I.5} to \ref{tag: I.6}} \vec{\nabla}\cdot \left(\vecnabla\cdot\vece\right) - \vecnabla^2\vec{E} \txtoneq{\ref{tag: I.23c}} \vecnabla \times \left(\partialt \vec{B}\right)\nn
+                = - \partialt \left(\vecnabla \times \vecb\right) \nn
+                \txtoneq{\ref{tag: I.23d}} - \partialt \left(\mu\varepsilon\partialt \vece\right) \labtag{I.24} \nonumber
+            \end{align}
+
+            and
+            \begin{align}
+                \Delta \vece = \mu\varepsilon \partialtt \vec{E} \labtag{I.25} \nonumber
+            \end{align}
+
+            (d):
+            \begin{align}
+                \vecnabla \times \left(\vecnabla\times\vecb\right) = \dots \labtag{I.26} \nn
+                \rightarrow \Delta \vecb = \mu\varepsilon\partialtt \vec{B} \labtag{I.27} \nonumber
+            \end{align}
+
+            The result are two decoupled equations(of second order) which can be rewritten using the d'Alembert operator:
+            \begin{align}
+                \square \psi\left(\vec{r} , t \right) = 0 \labtag{I.28} \nonumber
+            \end{align}
+
+            where $\psi = \vec{E}$ or $\psi = \vec{B}$
+
+            Remind, exactly the same type of equations, but with the scalar and the vector potentials instead of the E or the B fields were obtianed as determining equations within the
+             Lorenz gauge!!! \#12:30
+
+             This central equation \ref{tag: I.28} is known as homogeneous wave equation.
+
+             The solution manifold of the h.w.e. turns out to be extremely large! In fact every function of the type
+             \begin{align}
+                 \psi(\vecr,t) =  f_+\left(\veck\cdot \vecr + \omega t\right) + f_-\left(\veck\cdot \vecr + \omega t\right) \labtag{I.29} \nonumber
+             \end{align}
+             is a solution, if the functions f are differentiable and if the following a certain fixed relation between position and time behavior is fulfilled:
+            \begin{align}
+                \Delta \psi\left(\vecr,t\right) = \frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} \labtag{I.30} \nn
+                \frac{\partial^2 \psi\left(\vecr,t\right)}{\partial x^2}  \txtoneq{\ref{tag: I.29}} \frac{\partial^2}{\partial x^2} \left[f_+\left(\alpha_+\right) + f_-(\alpha_-)\right], \alpha_\pm = \vec{k}\vec{r} \pm \omega t \nn
+                = \frac{\partial}{\partial x} \left[\frac{\partial \alpha_+}{\partial x} \cdot \frac{\partial f_+\left(\alpha_+\right)}{\partial \alpha_+} + \frac{\partial \alpha_-}{\partial x} \cdot \frac{\partial f_-\left(\alpha_-\right)}{\partial \alpha_-}\right] \nn
+                = \frac{\partial}{\partial x} \left[k_x \cdot \frac{\partial f_+\left(\alpha_+\right)}{\partial \alpha_+} +k_x \cdot \frac{\partial f_-\left(\alpha_-\right)}{\partial \alpha_-}\right] \nn
+                = k_x^2\cdot \left[\frac{\partial^2f_+(\alpha_+)}{\partial_{\alpha_+}^2} + \frac{\partial^2f_-(\alpha_-)}{\partial_{\alpha_-}^2}\right] \labtag{I.31}\nonumber
+            \end{align}
+
+            \begin{align}
+                \Rightarrow \Delta \psi(\vecr,t) = \vecnabla^2 \psi(\vecr,t) = k^2\cdot \left[\frac{\partial^2f_+(\alpha_+)}{\partial_{\alpha_+}^2} + \frac{\partial^2f_-(\alpha_-)}{\partial_{\alpha_-}^2}\right] \labtag{I.32}\nonumber
+            \end{align}
+
+            \# 12:47-12:48
+
+
+
+
+
+
+
+
 
 \end{document}
