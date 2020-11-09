@@ -1,0 +1,165 @@
+\input{core.tex}
+\begin{document}
+    \exercise{0}{201109}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:Special Exercise on FT}{WS 2020/21}
+
+    Excursion: Fourier transforms
+
+    Fourier transforms are extremely widespread in many areas of physics and engineering etc. \\
+    In this course we encounter, e.g. both in the electrodynamics/optics as well as in the quantum-mechanics parts.
+    
+    The main confusing part is, in the beginning, mostly the face that Fourier transforms(FT) occur not only different areas, but they seem to have a arised for different reasons.
+
+    Consider, e.g. the h.w.e.(see lecture), here for simplification in one dimension(1d): 
+    \begin{align}
+        \left(\frac{\partial^2}{\partial x^2} - \frac{1}{c^2} \partialtt\right) \varphi (x,t) = 0 \labtag{1}
+    \end{align}
+
+    Possible(!) solutions are
+    \begin{align}
+        \sin(kx-\omega t), \cos(kx-\omega t), e^{i(kx-\omega t)},\text{ etc} \nonumber
+    \end{align}
+    with $k = \omega / c $
+
+    In the case of fixed frequency the time dependence is simply given by $e^{-\omega t}$ or $e^{+\omega t}$ and the spatial dependence is the solution of
+    \begin{align}
+        \left(\frac{d^2}{dx^2}  + k^2\right) \xi(x) = 0 \labtag{2}
+    \end{align} 
+
+    with the solutions $\sin(kx),\cos(kx)$ or $e^{ikx}$.
+
+    \begin{align}
+        \Rightarrow \xi(x) = a\cos(kx) + b\sin(kx) \labtag{3}
+    \end{align}
+    is also a solution.
+
+    This solution of the differential equation is known in mechanics from discussing a string fixed at the two ends and looking on its vibrations. If we take the length to be $\pi$,
+    \begin{align}
+        \xi_n(x) = \sin(nx), \text{     with } n = 1,2,\dots \nonumber
+    \end{align}
+    with the mode $n$.
+
+    Fourier postulated(!) that any function f defined within the interval -$\pi$ to +$\pi$ can be expanded within this interval in the form
+    \begin{align}
+        f(x) = \frac{1}{2}a_0 +   \sum_{n=1}^{\infty} \left[a_n\cos(nx) + b_n\sin(nx)\right] \labtag{4}
+    \end{align}
+
+    Leaving out the mathematical subtleties, the requirement that it is possible to represent any function uniquely(!) in terms of the solutions of a vibrating string is \# 15:45
+    \begin{itemize}
+        \item completeness
+        \item orthogonality
+    \end{itemize}
+
+    In fact, if one looks at the problem ot from the perspective of solutions of a differential equation, one sees that tthe concept also arises in the theory of functions!
+
+    Thus form the latter perspective, the functions $\sin(nx),\cos(nx)$ or $e^{ikx}$ are orthogonal and complete and thus can be used for expanding other functions. 
+    \begin{align}
+        \left\{ \sin(nx),\cos(nx)\right\} \text{    or  } \left\{ e^{ikx}\right\} \nonumber
+    \end{align} 
+    are complete orthogonal sets of function.
+
+    Note, as the wave equation is also the Schrödinger equation of a free particle, its solutions are eigenfunctions of an hermitian operator and thus form a complete, orthogonal set.
+
+    How do we obtain the expansion coefficients for some function we want to express within tthis set of complete, orthogonal functions? Again, wee can derive the same result in two "ways".
+    \begin{align}
+        f(x) \cdot \cos(mx) \txtoneq{\ref{tag: 4}}\frac{1}{2} a_0 \cos(mx) + \sum_{n=1}^{\infty} \left[a_n \cos(nx) \cdot \cos(mx) + b_n \sin(nx)\cos(mx)\right] \labtag{5}
+    \end{align}
+
+    and
+    \begin{align}
+        \int_{-\pi}^{\pi} f(x) \cdot \cos(mx) dx = \frac{1}{2} a_0 \int_{-\pi}^{\pi} \cos(mx) dx + \sum_{n=1}^{\infty} \left[a_n \int_{-\pi}^{\pi} \cos(nx)\cdot \cos(mx)dx + b_n \int_{-\pi}^{\pi} \sin(nx)\cdot \cos (mx) dx\right] \labtag{6}
+    \end{align}
+
+    using
+    \begin{align}
+        \int_{-\pi}^{\pi} \cos(mx)dx = 2\pi \delta_{m,0} \labtag{7.a} \\
+        \int_{-\pi}^{\pi}\cos(nx)\cdot \cos(mx)dx = \pi \delta_{m,n} \labtag{7.b} \\
+        \int_{-\pi}^{\pi} \sin(nx)\cdot \cos(mx)dx = 0 \labtag{7.c}
+    \end{align}
+
+    \begin{align}
+        \Rightarrow\int_{-\pi}^{\pi} f(x)\cdot\cos(mx)dx = \bigkuohao{a_0 \cdot \pi\text{   for    }m=0 }{a_m \cdot \pi\text{   for    }m\neq0} \labtag{8}
+    \end{align}
+
+    Analogously, one can consider $f(x)\cdot \sin(mx) $
+    \begin{align}
+        \rightarrow \int_{-\pi}^{\pi} \sin(nx)\sin(mx)dx = \pi \delta_{m,n} \labtag{9} \\
+        \rightarrow \int_{-\pi}^{\pi} f(x) \cdot \sin(mx)dx = b_m \cdot \pi \labtag{10}
+    \end{align}
+
+    As said before, this is exactly the same idea, as you see in quantum mechanics when you perform a change of basis:
+    \begin{align}
+        f(x) = \sum_i c_j g_j(x) \labtag{12} \\
+        \leftrightarrow c_j = \int_{-\infty}^{\infty} g_j^{\ast }(x)\cdot f(x) dx \labtag{13}
+    \end{align}
+
+    from Eq.\ref{tag: 8} and \ref{tag: 10}, follows:\\
+    if $f(x)$ is even:
+    \begin{align}
+        f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \cos(nx) \nonumber \labtag{14.a}
+    \end{align}
+    if $f(x)$ is odd:
+    \begin{align}
+        f(x) = \sum_{n=1}^\infty b_n \sin(nx) \nonumber \labtag{14.b}
+    \end{align}
+
+    more precisely we should distinguish the true function $F(x)$ and its approximation $f(x)$
+
+    The limitation of the interval to -$\pi$ and +$\pi$ can easily be abandoned:
+    \begin{align}
+        z:= \frac{\pi}{L}x \labtag{15}\\
+        \rightarrow a_n = \frac{1}{L} \int_{-L}^L F(x) \cos\left(n\frac{\pi x}{L}\right)dx \labtag{16} \\
+        b_n = \dots \nonumber
+    \end{align}
+
+    Using the Euler rrepresentation for sin and cos, wee can come from the real Fourier series above to its complex counterpart:
+    \begin{align}
+        \rightarrow f(x) = \sum_{n=-\infty}^\infty c_n e^{i\left(-\frac{\pi}{L}x\right)}\labtag{17} \\
+        \leftrightarrow c_n = \frac{1}{2L}\int_{-L}^{L} F(x)e^{-i\left(\frac{n\pi}{L}\right)x}dx \labtag{18}
+    \end{align}
+
+    Back insertion of Eq.\ref{tag: 18} into \ref{tag: 17} yields:
+    \begin{align}
+        f(x) = \sum_{n=-\infty}^\infty \left( \frac{1}{2L} \int_{-L}^L F(x^\prime) e^{-i \left(\frac{n\pi}{L}\right)x^\prime}dx^\prime\right)\cdot e^{i\left(\frac{n\pi}{2}\right)x} \nn
+        = \int_{-L}^L F(x^\prime) \left[\frac{1}{2L} \sum_{n=-\infty}^\infty e^{i\left(\frac{2\pi}{L}\right)(x-x^\prime)}\right]dx^\prime \nn
+        = \int_{-L}^L F(x^\prime) \delta(x-x^\prime)dx^\prime \labtag{19}
+    \end{align}
+    where \# 16:28
+    \begin{align}
+        \delta(x-x^\prime) = \frac{1}{2L}  \sum_{n=-\infty}^\infty e^{i\left(\frac{2\pi}{L}\right)(x-x^\prime)} \labtag{20}
+    \end{align}
+
+    In order to extend the limit from $\left[-L, L\right]$ to $\left[-\infty,\infty\right]$ one considers the following limits: \# 16:35
+    \begin{align}
+        \text{(i)   } k:= \frac{n\pi}{L}\text{  remain large} \nn
+        \text{(i)   } c_n \rightarrow 0, \text{ but     } G(k) := \lim_{c_n \rightarrow 0} \frac{L}{\pi}c_n \text{ remain limit!} \nn
+        \rightarrow f(x) = \int_{-\infty}^{\infty} G(k) e^{ikx} dk \labtag{21} \\
+        \rightarrow G(k) := \lim_{c_n \rightarrow 0, L\rightarrow \infty} \frac{L}{\pi}c_n = \frac{1}{2\pi} F(x) e^{-ikx}dx \labtag{22}
+    \end{align}
+
+    In general, a pair of functions F(x) and G(k) which are related by
+    \begin{align}
+        F(x) =  \int_{-\infty}^{\infty} G(k)e^{+ikx}dk \leftrightarrow G(k) = \frac{1}{2\pi}  \int_{-\infty}^{\infty} F(x) e^{-ikx} dx \labtag{23}
+    \end{align}
+    is called a Fourier pair! \#16:40
+
+    Note, in Eq.\ref{tag: 23}, we have the so-called asymmetric normalization in which the factor $\frac{1}{2\pi}$ occurs only on one side.
+     Especially in math the symmetric normalization with $\frac{1}{\sqrt{2\pi}}$ on both sides is more popular. \#16:46
+
+    Note: as the operation of a Fourier transform(that maps one of the two functions of a Fourier pair into the other) is UNIQUE, 
+    none of the two functions of a Fourier pair contains more information than the other!!!
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+\end{document}
