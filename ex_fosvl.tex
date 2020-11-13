@@ -1,4 +1,195 @@
 \input{core.tex}
 \begin{document}
+\lecture{1}{20.11.11}{Prof. Arno Rauschenbeutel}{Guangyu He}{Fundamentals of Optical Sciences:experimental part}{WS 2020/21}
+
+\section{Ray Optics}
+    {\bf Description of all optical phenomena $\leftrightarrow$ quantum optics(quantum electrodynamics)}
+
+    But: Depending on the problem, various approximations can be (and should be!) applied.
+    \begin{itemize}
+        \item light is classical coupled vector waves for electromagnetic field $\leftrightarrow$ electromagnetic optics
+        \item light is classical scalar wave $\leftrightarrow$ wave optics
+        \item light is rays, which propagate following geometric rules $\leftrightarrow$ ray optics
+    \end{itemize}
+
+    We have:
+
+    ray optics $\subset $ wave optics $\subset $ electrodynamics optics $\subset $ quantum optics,
+
+    where, historically, the corresponding theories have been developed is about this order.
+    
+    \subsection{Postulates of Ray Optics}
+        \begin{itemize}
+            \item light propagates in the form of rays
+            \item optic media are characterized by their refractive index, $n\geq 1$, where 
+            \begin{align}
+                n= \frac{c_0}{c} \labtag{1.1}
+            \end{align}
+            and $c_0$: speed of light in vacuum, $c$: speed of light in medium
+        \end{itemize}
+
+        propagation time over distance d:
+        \begin{align}
+            t = \frac{d}{c} = \frac{nd}{c_0} \nonumber
+        \end{align}
+
+        where $nd$: optical path length, $d$: geometrical path length
+
+        \begin{itemize}
+            \item inhomogeneous medium $\leftrightarrow$ $n$depends on position $\vecr$
+        \end{itemize}
+        Optic path length in this case:
+        \begin{align}
+            \int_A^B  n\left(\vecr\right)ds \nonumber
+        \end{align}
+
+        \fig{0.5}{ex_fosvl1_1.png}{1}{}
+
+        \begin{itemize}
+            \item Fermat's principle: light rays propagate from A to B such that the optic path length takes an external value:
+            \begin{align}
+                \delta  \int_A^B  n\left(\vecr\right)ds = 0 \labtag{1.2}
+            \end{align}
+        \end{itemize}
+        
+        In most cases, the optical path length will be minimized, thus,
+
+        \underline{light rays propagate from A to B along a path that takes the least time.}
+
+        N.B. : Fermat's principle allows one to derive, ??? others, the laws of reflection and refraction.
+
+        \underline{law of reflection:}\\
+        reflected ray lies in the place of incidence angle of incidence = ??? angle
+        \fig{0.5}{ex_fosvl1_2.png}{2}{law of reflection}
+
+        \underline{law of refraction:}\\
+        refracted ray lies in the plane of incidence, $\theta_1$ and $\theta_2$ connected by Snell's laws:
+        \begin{align}
+            n_1\sin\theta_1 = n_2\sin\theta_2 \labtag{1.3}
+        \end{align}
+        \fig{0.5}{ex_fosvl1_3.png}{3}{law of reflection}
+
+    \subsection{Simple optical components}
+        \underline{Plane mirror}
+
+        \fig{0.5}{ex_fosvl1_4.png}{4}{ All rays from $P_1$ are reflected ??? that they seem to issue from image point $P_2$}
+
+        \underline{Pasalolic mirror}
+
+        Collects all rays that propagate parallel to the optical axis in focal point F$_1$ \\
+        $\bar{PF} =: f$ is focal length
+        \fig{0.5}{ex_fosvl1_5.png}{5}{}
+
+        \underline{Elliptical mirror}
+        
+        \fig{0.5}{ex_fosvl1_6.png}{6}{ All rays that issues from focal point $P_1$ are reflected into 2nd focal point $P_2$}
+
+        {\bf Fermat's principle $\Rightarrow$ optical path lengths of all rays are identical($\Leftrightarrow$ definition of the ellipse)}
+
+        \underline{Sepherical mirrors}
+        
+        Remark: These are easier to fabricate from a technical point of view. For paraxial rays(near optical axis \& small angle w.r.t optical axis), 
+        they have approximate the source imaging properties as parabolic \& elliptical mirrors.
+        
+        Image formation for paraxial rays:
+        \fig{0.5}{ex_fosvl1_7}{7}{Convention: $R < 0$ for concave surface, and $R > 0$ for convex surface        }
+        \begin{align}
+            \frac{1}{z_1} + \frac{1}{z_2} \simeq \frac{2}{-R} = \frac{1}{f} \labtag{1.4}
+        \end{align}
+
+        \underline{gaussian mirror equation}\\
+        (a.k.a. mirror and lens equations)
+
+        {\bf For rays II to optical axis, we have $z_1 =\infty$ and, thus, $z_2 = (-R)/2$. Hence, $f=(-R)/2$ is the focal length.}
+
+        \underline{Plane interface}
+
+        \fig{0.5}{ex_fosvl1_8}{8}{ray is reflected away from the interface$\rightarrow \theta_1 < \theta_2$ }
+
+        \fig{0.5}{ex_fosvl1_9}{9}{ray is refracted towards the interface $\rightarrow \theta_2 > \theta_1$}
+
+        from a certain angle ???, i.e., for $\theta_1 \leq \theta_c$, where $\theta_c$ is ?? critical angle, we have $\theta_2 \leq 90^°$ and the refracted 
+        ray no longer exists.
+
+        We have
+        \begin{align}
+            n_1 \sin\theta_c = n_2 \sin90^° = n_2 \nn
+            \Rightarrow \theta_c = \arcsin(n_2 / n_1) \labtag{1.5}
+        \end{align}
+
+        \fig{0.5}{ex_fosvl1_10}{10}{Relation between $\theta_1 \& theta_2$}
+
+        {\bf For $\theta_1 > \theta_2$, all light is reflected at the interface $\rightarrow$ total internal reflection}
+
+        Total internal reflection is frequently employed in order to efficiently reflect or guide light:
+        
+        \fig{0.5}{ex_fosvl1_11}{11}{TIR for $n_1 > \sqrt{2}n_2$}
+
+        \fig{0.5}{ex_fosvl1_12}{12}{Optical waveguide}
+
+        \fig{0.5}{ex_fosvl1_13}{13}{optical glass fiber}
+
+        \fig{0.5}{ex_fosvl1_14}{14}{Spherical lenses: combination of two seherical interfaces(air-glss \& glass-air) separated by a distance $\Delta$}
+
+        \fig{0.5}{ex_fosvl1_15}{15}{}
+        Conventions:
+        \begin{itemize}
+            \item $R>0(<0)$ for convex(concave) surface,
+            \item $P_1(P_2)$ is measured in a leftward(rightward-) pointing coordinate system,
+            \item $\theta$ is positive(negative) if the ray propagates into the direction of the positive(negative) y-axis
+        \end{itemize}
+
+        For thin lenses(i.e. $\Delta$ is negligible$\leftrightarrow$ y-coord. unchanged after lenses) and paraxial rays, we find
+        $$
+        \theta_2 = \theta_1 - \frac{y}{f},
+        $$
+        where the focal length is given by
+        \begin{align}
+            \frac{1}{f} = \left(n - 1\right)\left(\frac{1}{R_1} - \frac{1}{R_2}\right) \labtag{1.6}
+        \end{align}
+        which is lensmaker's equation
+
+        \fig{0.5}{ex_fosvl1_16}{16}{}
+        We have:
+        \begin{itemize}
+            \item lens equation
+           \begin{align}
+                \frac{1}{z_1} + \frac{1}{z_2} = \frac{1}{f}\labtag{1.7}
+            \end{align}
+            \item magnification
+            \begin{align}
+                y_2 = - \frac{z_2}{z_1}y_1 \labtag{1.8}
+            \end{align}
+        \end{itemize}
+
+        Remarks:
+        \begin{itemize}
+            \item magnification$\left(-\frac{z_2}{z_1}\right)$ negative $\leftrightarrow$ image is flipped.
+            \item Eq.\ref{tag: 1.6}-\ref{tag: 1.8} only hold for paraxial rays. Non-paraxial rays are subject to so-called spherical aberrations.
+        \end{itemize}
+
+    \subsection{Matrix optics}
+        Matrix optics allows one to trace the propagation of paraxial rays through an optical system.
+
+        {\bf 2-dim method $\Rightarrow$ can be applied to planes systems or to ??? rays in system with cylindrical? symmetry?}
+
+
+
+
+
+
+
+
+
+
+\lecture{2}{20.11.12}{Prof. Arno Rauschenbeutel}{Guangyu He}{Fundamentals of Optical Sciences:experimental part}{WS 2020/21}
+        Described ray by$(y,\theta)$
+        
+
+
+
+
+
+
 
 \end{document}
