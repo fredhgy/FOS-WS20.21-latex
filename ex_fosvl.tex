@@ -184,7 +184,98 @@
 
 \lecture{2}{20.11.12}{Prof. Arno Rauschenbeutel}{Guangyu He}{Fundamentals of Optical Sciences:experimental part}{WS 2020/21}
         Described ray by$(y,\theta)$
-        
+        \fig{0.5}{ex_fosvl2_1}{1}{}
+
+        In paraxial approximation, we have $\sin\theta \simeq \theta$ \\
+        thus, $(y_2,\theta_2)$ depends linearly on$(y_2,\theta_2)$, hence
+        \begin{align}
+            \left(\begin{matrix}
+                y_2 \\
+                \theta_2
+            \end{matrix}\right) =  \left( \begin{matrix}
+                A & B \\
+                C & D
+            \end{matrix}\right)\left(\begin{matrix}
+                y_1 \\
+                y_2 
+            \end{matrix}\right)\labtag{1.9}
+        \end{align} 
+        where $u=\left(\begin{matrix}
+            A & B \\
+            C & D
+        \end{matrix}\right)$ is ray transfer matrix.
+
+        \underline{Matrices for simple optical components}
+        \fig{0.5}{ex_fosvl2_2}{2}{Free-spcae propagation: We have $y_2 = y_1 + d\theta_1$ and $\theta_2 =\theta_1$. Thus, $u = \left(\begin{matrix}
+            1 & d \\
+            0 & 1
+        \end{matrix}\right)$}
+
+        \fig{0.5}{ex_fosvl2_3}{3}{Refraction at a plane interface: We have $y_1 = y_2$ and $n_1\theta_1 < n_2\theta_2$ (Snell's law in paraxial approximation). Thus, $ M = \left(\begin{matrix}
+            1 & 0 \\
+            0 & \frac{n_1}{n_2}
+        \end{matrix}\right)$}
+
+        \fig{0.5}{ex_fosvl2_4}{4}{Refraction at a spherical interface: Using the relation from the excercise sheet for $\theta_1 \& \theta_2$ and $y_1 = y_2$, it follows that $ M = \left(\begin{matrix}
+            1 & 0 \\
+            -\frac{n_1 - n_2}{n_2 R} & \frac{n_1}{n_2}
+        \end{matrix}\right)$ where $R>0(<0)$ for convex(concave) lens}
+
+        \fig{0.5}{ex_fosvl2_5}{5}{Propagation through a thin lens: Using the last result in conjunction with the lensmaker's equation\ref{tag: 1.6}, we have $\theta_2 = \theta_1 - y/R $ and $y_2 = y_1$. Thus, $ M = \left(\begin{matrix}
+            1 & 0 \\
+            -\frac{1}{f} & 1
+        \end{matrix}\right)$ where $f>0(<0)$ for convex(concave) lens}
+
+        \fig{0.5}{ex_fosvl2_6}{6}{Reflection at a plane mirror: \underline{Convention:} The z-axis always counts positive in the direction of propagation of the ray. Thus, $M = \left(\begin{matrix}
+            1 & 0 \\
+            0 & 1
+        \end{matrix}\right)$}
+
+        Reflection at a spherical mirror:\\
+        Using the same convention and eq.\ref{tag: 1.4}, we find $ M = \left(\begin{matrix}
+            1 & 0 \\
+            2/R & 1
+        \end{matrix}\right)$ which is analogous to a thin lens
+
+        \underline{Matices for comlrned? optical components}\\
+        Sequence of N optical components with matrices $M_1,M_2,\dots,M_N$ is equivalent to a single optical system with ray traces for matrix
+        \begin{align}
+            M = M_N\dots M_2 M_1 \labtag{1.10}
+        \end{align}
+        Note that the first matrix appears on the right!
+
+        \fig{0.5}{ex_fosvl2_7}{7}{Example: Air gap plus thin lens}
+        \begin{align}
+            M = \left(\begin{matrix}
+                1 & 0 \\
+                -\frac{1}{f} & 1
+            \end{matrix}\right) \left(\begin{matrix}
+                1 & d \\
+                0 & 1
+            \end{matrix}\right) = \left(\begin{matrix}
+                1 & d\\
+                -\frac{1}{f} & 1 - \frac{d}{f}
+            \end{matrix}\right) \nonumber
+        \end{align}
+
+        \underline{Remark:} As a formalism, matrix optics is way more important and powerful that what is apparent at this stage(labs?).
+
+\section{Wave Optics}
+    Light propagates in the form of a wave. In vacuum, the propagation velocity is
+    \begin{align}
+        c_0 = 3\times 10^8 m/s = 30 cm/ns = 0.3 mm/ps = 0.3 nm/fs \nonumber
+    \end{align}
+
+    Optical wavelengths comprise these ranges
+    \fig{0.5}{ex_fosvl2_8}{8}{}
+    N.B.:Ray optics is a limiting case of wave optics for infinitely small wavelengths.
+
+    \subsection{The postulates of wave optics}
+    \underline{Wave equation}
+
+    Speed of light in vacuum: $c_0$
+
+
 
 
 

@@ -414,4 +414,164 @@
 
 
 
+
+\lecture{4}{20.11.06}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:theory part}{WS 2020/21}
+
+        Reminder(last lecture):
+        \begin{align}
+            \square \psi(\vecr,t) = 0 \nonumber
+        \end{align}
+        where$\psi = \vece,\vecb$ or $\phi,\veca$. Note, for $\vece$ and $\vecb$, if the curl is applied to m.w.e for $\phi$ and $\veca$, if the Lorenz gauge is adopted for m.w.e.
+
+        \# 09:19
+
+        from Eq.\ref{tag: I.29} and Eq.\ref{tag: I.32}  analogously:
+        \begin{align}
+            \frac{1}{u^2}\partialtt \psi(\vecr,t) \txtoneq{\ref{tag: I.29}} \frac{1}{u^2} \partialtt \left[f_+(\alpha_+) + f_-(\alpha_-)\right] \nn
+            = \frac{1}{u^2} \omega^2 \left[\frac{\partial^2 f_+(\alpha_+) }{\partial \alpha_+^2} + \frac{\partial^2 f_-(\alpha_-) }{\partial \alpha_-^2}\right] \labtag{I.33}
+        \end{align}
+
+        comparing left and right hand side:
+        \begin{align}
+            \Delta \psi = k^2 \left[\frac{\partial^2 f_+(\alpha_+) }{\partial \alpha_+^2} + \frac{\partial^2 f_-(\alpha_-) }{\partial \alpha_-^2}\right] \txtoneq{!} \frac{\omega^2}{u^2} \left[\frac{\partial^2 f_+(\alpha_+) }{\partial \alpha_+^2} + \frac{\partial^2 f_-(\alpha_-) }{\partial \alpha_-^2}\right] = \frac{1}{u^2} \partialtt \psi(\vecr,t) \labtag{I.34} \nn
+            \Rightarrow \psi(\vecr,t) = f_+(\veck\vecr+\omega t) + f_-(\veck\vecr - \omega t) \nonumber
+        \end{align}
+
+        \# 09:29
+        ??? Eq.\ref{tag: I.28}, if
+        \begin{align}
+            k^2 = \frac{w^2}{u^2} \Rightarrow k = \frac{\omega}{u} \text{   or  }\omega = u\cdot k \labtag{I.35}
+        \end{align}
+        dispersion relation!\# 09:31
+
+        Remind:
+        \begin{itemize}
+            \item any possible function $f$ as long as it sufficiently differentiable with respect to $t$ and $r$ is a solution, provided the argument fullfil the dispersion relation.
+            \item we just solved a differential equation, the solution to a physiocal situation(experimental set-up) follows from considering the corresponding boundary conditions.
+            \item it should be emphasized again that the solution of the h.w.e.  is only a solution of the curl applied to the m.w.e determining the curl of $\vece$ or $\vecb$, while it is a solution to the m.w.e for $\phi$ and $\veca$ in Lorenz gauge.
+        \end{itemize}
+
+        Specific periodic solutions are, e.g.,
+        \begin{align}
+            \tilde{f}_\pm (\vecr,t) = \tilde{A}_\pm \cos\left(\veck\vecr \pm \omega t + \phi_0\right) \labtag{I.36a}\nn
+            f_\pm(\vecr,t) = A_\pm \cdot e^{i\left(\veck\vecr \pm \omega t + \phi_0\right)} \labtag{I.36b}
+        \end{align}
+        with a constant $\phi_0$
+
+        the argument $\phi_\pm = \veck\vecr \omega t + \phi_0 $ is called phase.
+
+        For constant time t$t$ the planes of constant phase are defined by $\veck\vecr = \text{const.}$
+
+        In general(for non-constant time t): 
+        \begin{align}
+            \phi_\pm = \veck\vecr \pm \omega t + \phi_0 =: \alpha_\pm \Leftrightarrow \beta_\pm := \alpha_\pm - \phi_0 = \veck\vecr \pm \omega t \labtag{I.37}
+        \end{align}
+
+        Scalar product yields: $\veck\vecr = k \cdot r_k, k=\abs{\vec{k}},r_k = \abs{\vecr_k}$ where $\vecr_k$ projection of $\vecr,\veck$,and
+        \begin{align}
+            \rightarrow \beta_\pm = kr_k \pm \omega t \nn
+            \rightarrow r_k = \frac{\beta_\pm}{k} \mp \frac{\omega}{k}t \labtag{I.38}
+        \end{align}
+
+        A plane defined by constant phase $\beta_\pm$ moves with the phase velocity.
+        \begin{align}
+            \frac{dr_k}{dt} = \mp \frac{\omega}{k} \txtoneq{\ref{tag: I.35}} \mp u \labtag{I.39}
+        \end{align}
+
+        The planes move along the wave vector $\veck$. More accurately, $f_-$ moves parallel, $f_+$ moves antiparallel to $\veck$.\\
+        The phase velocity $u= \frac{1}{\sqrt{\varepsilon_0\mu_0}}$ says that electromagnetic waves in vacuum move with the vacuum speed of light c.
+
+        In a isotropic linear medium one has $ u = \frac{1}{\sqrt{\varepsilon\mu}}$ instead.
+
+        Usually$\varepsilon > \varepsilon_0$ and $\mu \simeq \mu_0$, the propagation velocity of e.m. in medium is usually slow than in vacuum.
+
+        The ratio $ u := \sqrt{\frac{\varepsilon\mu}{\varepsilon_0\mu_0}}$ is called index of refraction.
+
+        For the here discussed solutions $f$ and $f$ for fixed times of the surfaces of equal phases and thus equal function values repeat periodically in space for
+        \begin{align}
+            \varphi_1 = \varphi_2 + 2\pi n \text{   with    } n \in N \labtag{I.40}
+        \end{align}
+
+        Going along the wave vector $\veck$ the distance between two points of equation function values is
+        \begin{align}
+            \abs{\vecr_1 - \vecr_2} = \frac{2\pi n}{k} \nonumber
+        \end{align}
+
+        The shortest distance(n=1) is called wavelength $\lambda$:
+        \begin{align}
+            \lambda := \frac{2\pi}{k} \labtag{I.41}
+        \end{align}
+
+        If one considers the value of the function atr a fixed point in space then the value repeats periodically after the time period:
+        \begin{align}
+            T = \frac{2\pi}{\omega} \labtag{I.42}
+        \end{align}
+
+        Frequency and angular frequency:
+        \begin{align}
+            \nu  := \frac{1}{T} \nn
+            \omega = 2\pi\nu \nonumber
+        \end{align}
+
+        and 
+        \begin{align}
+            u = \frac{2\pi\nu}{k} = \lambda \nu = \frac{\lambda}{T} \labtag{I.43}
+        \end{align}
+
+        As already said, for $\phi$ and $\veca$(in Lorenz gauge!!!) the solutions of the h.w.e. $\psi$ is the solution of the problem! However, in the case of $\vece$ and $\vecb$, we have considered so far only 2 of the four m.w.e! 
+        In fact, we solved the equations resolution from applying the  curl onto them(for decoupling $\vece$ and $\vecb$).
+
+        Therefore, we have to look for the (sub)set of solutions that also! solve the remaining m.w.e.!
+        \begin{align}
+            \vec{E}_\pm = \vec{E}_0 \cdot e^{i(\veck\vecr \pm \omega t + \phi_0)}, \vec{B}_\pm = \vecb_0 \cdot e^{(\veck^\prime\vecr \pm \omega^\prime t + \phi_0^\prime)} \labtag{I.44}
+        \end{align}
+
+        In fact, as those were the solutions of the curl applied to the m.w.e (if considering $\vece$ and $\vecb$), we want to have the solutions for the original m.w.e.:
+        \begin{align}
+            \vecnabla \times \vece = - \partialt \vecb \nonumber
+        \end{align}
+
+        Reminder:
+        \begin{align}
+            \vecnabla \times (f\cdot \vec{g}) = f \cdot \left(\vecnabla \times \vec{g}\right) - \vec{g}\times(\vecnabla f)  \nn
+            = f\cdot(\vecnabla \times \vec{g}) + (\vecnabla f)\times \vec{g} \labtag{I.45}
+        \end{align}
+
+        left hand sides:
+        \begin{align}
+            \vec{\nabla}\times \vece_\pm = e^{i (\veck\vecr \pm \omega t + \varphi_0)} (\vecnabla \times\vece_0) - \vece_0 \times \left(\vecnabla e^{i (\veck\vecr \pm \omega t + \varphi_0)}\right)  \nn
+            \vec{\nabla}\times \vece_\pm = - \vec{E}_0 \times \left(\vecnabla e^{i (\veck\vecr \pm \omega t + \varphi_0)}\right) \labtag{I.46} \\
+            = - i \left(\vec{E}_0 \times \veck \right) \cdot e^{i (\veck\vecr \pm \omega t + \varphi_0)} \nn
+            = + i (\veck \times \vece_0) \cdot e^{i (\veck\vecr \pm \omega t + \varphi_0)} \labtag{I.47}
+        \end{align}
+
+        right hand sides of \ref{tag: I.23c}:
+        \begin{align}
+            -\partialt\vecb_\pm \txtoneq{\ref{tag: I.44}} - (\pm i \omega^\prime)e^{i (\veck^\prime\vecr \pm \omega^\prime t + \varphi_0^\prime)} \nn
+            = \mp i \omega^\prime \vecb_0 e^{i (\veck^\prime\vecr \pm \omega^\prime t + \varphi_0^\prime)} \labtag{I.48}
+        \end{align}
+
+        In order that m.w.e \ref{tag: I.23c} is fulfilled at any instant of time at any place we must require
+        \begin{align}
+            i(\veck\times\vece_0)e^{i (\veck\vecr \pm \omega t + \varphi_0)} \txtoneq{!} \mp i \omega^\prime \vecb_0 e^{i (\veck^\prime\vecr \pm \omega^\prime t + \varphi_0^\prime)} \labtag{I.49}
+        \end{align}
+        therefore,
+        \begin{align}
+            \veck^\prime = \veck, \omega^\prime = \omega, \varphi^\prime_0 = \varphi_0 \labtag{I.50}
+        \end{align}
+
+        and
+        \begin{align}
+            \veck \times \vece_0 \txtoneq{!} \mp \omega \vecb_0 \labtag{I.51}
+        \end{align}
+
+        
+
+
+
+
+
+
+
+
 \end{document}
