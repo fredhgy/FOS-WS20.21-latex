@@ -373,4 +373,165 @@
 
         \fig{0.5}{ex_fosvl2_10}{10}{        e.g. $\varphi(\vecr) = 2\pi q $ with $q\in\mathbb{Z}$        }
 
+
+
+
+
+
+
+
+
+
+
+
+\lecture{3}{20.11.13}{Prof. Arno Rauschenbeutel}{Guangyu He}{Fundamentals of Optical Sciences:experimental part}{WS 2020/21}
+
+        \underline{Simple waves}\\
+        \underline{Plane waves}\\
+        Complex amplitude:
+        \begin{align}
+            u(\vecr) = Ae^{-i\veck\cdot\vecr} \nn
+            = Ae^{-i(k_x x + k_y y + k_z z)} \labtag{2.13}
+        \end{align}
+
+        where $A = \text{const.} \in \mathbb{D}$ is complex envelope and $\veck = (k_x,k_y,k_z)$ is wave vector.
+
+        Inserting eq.\ref{tag: 2.13} into Helmholtz eq\ref{tag: 2.10} $\rightarrow k_x^2 + k_y^2 + k_z^2 = k$ or
+        \begin{align}
+            \abs{\veck} = k = \frac{\omega}{c} \nonumber
+        \end{align}
+
+        Phase of the plane wave:
+        \begin{align}
+            \varphi(\vecr) = \arg(u(\vecr)) = \arg(A) - \veck\cdot \vecr \nonumber
+        \end{align}
+        $\rightarrow$ wave fronts: $\veck\cdot \vecr = 2\pi q + \arg(A)$\\
+        this describes parallel phases $\bot$ to $\veck$
+
+        ??? of two phases for $q \& q+1$:
+        \begin{align}
+            \lambda = \frac{2\pi}{k}  = \frac{c}{\nu} \labtag{2.15}
+        \end{align}  
+
+        where $\lambda$ is wavelength
+
+        Example: Propagation along z-direction $\rightarrow u(\vecr) = Ae^{- i k z}$ and wave function
+        \begin{align}
+            u(\vecr,t) = \abs{A} \cos(\omega t - k z + \arg(A)) \nn
+            = \abs{A} \cos(\omega(t - z/c) + \arg(A)) \nonumber
+        \end{align}
+
+        where $z/c$ is phase velocity.
+
+        Un a medium with refractive index $n$, we have
+        \begin{align}
+            c = c_0 / n, \lambda = \lambda_0 / n, k = nk_0 \labtag{2.16}
+        \end{align}
+
+        N.B.: frequency remains unaltered
+        \begin{align}
+            \omega = ck=\frac{c_0}{n}\cdot nk_0 = c_0 k_0 = \omega_0 \nonumber
+        \end{align}
+
+        \underline{Spherical waves}\\
+        complex amplitude in spherical coordinates:
+        \begin{align}
+            u(\vecr) = \frac{A_0}{r}e^{-ikr} \labtag{2.17}
+        \end{align}
+        where $r$ is distance from origin,$A_0 = \text{const.} \in \mathbb{D}$
+        \begin{align}
+            \rightarrow I(\vecr) = \frac{\abs{A_0}^2}{r}\labtag{2.18}
+        \end{align}
+
+        For $\arg(A_0) = 0$, the wave fronts are concentric spherical shells with radius $r = 2\pi q/k = q\lambda$, which are thus separated by $\lambda$.
+
+        N.B.:
+        \begin{itemize}
+            \item Spherical wave issuing from $\vecr_0$:
+            \begin{align}
+                u(\vecr) = \left(\frac{A_0}{\abs{\vecr - \vecr_0}}\right)e^{-ik\abs{\vecr-\vecr_0}} \nonumber
+            \end{align}
+            \item For eq.\ref{tag: 2.17}, the spherical wave propagates towards the origin rather than away from it.
+        \end{itemize}
+
+        \underline{Fresnela approximation for spherical waves(paralotic? waves)}\\
+        Consider spherical wave for away from origin but near the optical axis
+        \begin{align}
+            \rightarrow \sqrt{x^2 + y^2} \ll z \text{   or  } \theta^2 = \frac{x^2 + y^2}{z^2} \ll 1 \nonumber
+        \end{align}
+
+        Using the Taylor expansion $\sqrt{1 + \varepsilon} \simeq 1 + \frac{\varepsilon}{2}$ for $\varepsilon \ll 1$, we can write
+        \begin{align}
+            r = \sqrt{x^2 + y^2+ z^2} = z\sqrt{ 1 + \theta^2} \simeq z\left(1 + \frac{\theta^2}{2}\right) = z + \frac{x^2 + y^2}{2z} \labtag{2.19}
+        \end{align}
+
+        and thus,
+        \begin{align}
+            u(\vecr) = \frac{A_0}{z}e^{-ikz}e^{-ik\frac{x^2 + y^2}{2z}} \labtag{2.20}
+        \end{align}
+
+        N.B.:
+        \begin{itemize}
+            \item Magnitude is less susceptible to errors that the phase, where awe require that the error in $kr$ is much smaller than $2\pi$, or that the error in $r$ is $\ll 2\pi/k = \lambda$. There, we used $r = z\sqrt{1 + \theta^2} \simeq z$ in the denominator.
+            \item eq.\ref{tag: 2.20} is an important result for describing diffraction(???).
+        \end{itemize}
+
+        \underline{Validity of Fresnel Approximation}\\
+        Next higher order ??? in Taylor expansion of $\sqrt{1 + \theta^2} $ reads $ - \frac{\theta^4}{8}$. In order to neglect it, we must have
+        \begin{align}
+            kz\theta^4/ 8 \ll \pi \text{ or } (x^2 + y^2)^2 \ll 4z^3\lambda \text{ or } a^4 \ll 4z^3\lambda \nonumber
+        \end{align}
+
+        where $a$ is the distance of the point $(x,y)$ from the z-axis(optical axis).
+
+        Thus, for all points$(x,y)$, we must have
+        \begin{align}
+            \frac{\text{N}_\text{F} \theta^2_\text{max}}{4} \ll 1 \labtag{2.21}
+        \end{align}
+
+        where $\theta_\text{max} = \frac{a_\text{max}}{z} $ is the maximum angle and Fresnel number:
+        \begin{align}
+            \text{N}_\text{F} = \frac{a^2_\text{max}}{\lambda z} \labtag{2.22}
+        \end{align}
+
+        \underline{Paraxial waves} \\
+        Wave paraxial $\leftrightarrow$ normals to wave fronts are paraxial rays $\leftrightarrow$ complex amplitudes is a modulated plane wave
+        \begin{align}
+            u(\vecr) = A(\vecr)e^{-ikz} \labtag{2.23}
+        \end{align}
+
+        where the variation of $A(\vecr)$ and of $\frac{\partial A(\vecr)}{\partial z }$ has to ve sufficiently small on the scale of the wavelength $\lambda = \frac{2\pi}{k}$
+
+        \underline{Paraxial Helmoholtz equation}\\
+        Quantitative formulation of the condition for paraxial waves:
+        \begin{itemize}
+            \item Change of $A(\vecr)$ within interval $\Delta z = \lambda $ has to be much smaller than $A(\vecr)$ itself, i.e.,
+            \begin{align}
+                \frac{\partial A}{\partial z} \cdot \lambda \ll A \text{ or } \frac{\partial A}{\partial z} \ll kA \labtag{2.24}
+            \end{align}
+            \item Change of $\partial A / \partial z$ within interval $\Delta z = \lambda$ has to be much smaller than $\partial A / \partial z$ itself, i.e.,
+            \begin{align}
+                \frac{\partial^2 A}{\partial z^2} \ll k \frac{\partial A}{\partial z} \labtag{2.25}
+            \end{align}
+            Thus, in particular
+            \begin{align}
+                \frac{\partial^2 A}{\partial z^2} \ll k^2 A \labtag{2.26}
+            \end{align}
+            Inserting eq\ref{tag: 2.23} into Helmholtz eq\ref{tag: 2.10} and neglecting $\partial^2 A / \partial z^2$ ??? $k\cdot \partial A / \partial z$ and $k^2A$, We obtain(see exercises) paraxial Helmholtz equation:
+            \begin{align}
+                \Delta_t^2 A - 2 ik\frac{\partial A}{\partial z} = 0 \labtag{2.27}
+            \end{align}
+            where $\Delta_t^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}$: Transverse Laplace operator. 
+        \end{itemize}
+
+        \underline{Remarks:}
+        \begin{itemize}
+            \item eq.\ref{tag: 2.25} and \ref{tag: 2.26}: slowly varying envelope approximation(SVEA),
+            \item eq.\ref{tag: 2.27} is formally equivalent to Schrödinger equation in quantum mechanics,
+            \item Amongst others, eq.\ref{tag: 2.27} is solved by 
+            \begin{itemize}
+                \item parabolic waves
+                \item gaussian beams(important/useful for optical Resonators, Lasers, etc.)
+            \end{itemize}
+        \end{itemize}
 \end{document}
