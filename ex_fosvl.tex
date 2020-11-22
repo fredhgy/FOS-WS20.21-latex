@@ -271,13 +271,107 @@
     N.B.:Ray optics is a limiting case of wave optics for infinitely small wavelengths.
 
     \subsection{The postulates of wave optics}
-    \underline{Wave equation}
+        \underline{Wave equation}
 
-    Speed of light in vacuum: $c_0$
+        Speed of light in vacuum: $c_0$
 
+        Speed of light in a homogeneous transparent medium with index of refraction $n$:
+        \begin{align}
+            c = \frac{c_0}{n} \labtag{2.1}
+        \end{align}
 
+        mathematical description:\\
+        wave function $u(\vecr,t)$(real)
 
+        $u(\vecr,t)$ has to fulfill the wave equation
+        \begin{align}
+            \nabla^2 u - \frac{1}{u^2}\partialtt u = 0 \labtag{2.2}
+        \end{align}
 
+        N.B.: the wave equation is linear in $u \rightarrow$ superposition principle:\\
+        If $u_1(\vecr,t)$ and $u_2(\vecr,t)$ represent valid optical waves their sum $u(\vecr,t) = u_1(\vecr,t) + u_2(\vecr,t)$ is also a valid optical wave.
+
+        \underline{Intensity and power of optical waves}\\
+        Intensity is optical power per unit area:
+        \begin{align}
+            I(\vecr,t) = 2 \langle u^2(\vecr,t) \rangle \labtag{2.3}
+        \end{align}
+
+        where $\langle \dots \rangle$ devotes averaging over a time much larger than the devotion of the optical period(e.g. $2\times 10^{-15}s$ for $\lambda = 600$nm)
+
+        \underline{Remark:} Factor 2 in eq.\ref{tag: 2.3} is (still) arbitray because we (still) have not assigned a physical meaning to $u(\vecr,t)$.
+
+        Let A be a surface that is oriented perpendicularly to the propagation direction of the light$\rightarrow$ optical pases impinging on A:
+        \begin{align}
+            P(t) = \int_A I(\vecr.t)dA \labtag{2.4}
+        \end{align}  
+
+    \subsection{homogeneous waves}
+
+        \begin{align}
+            u(\vecr,t) = a(\vecr)\cos(2\pi \nu t + \varphi(\vecr)) \labtag{2.5}
+        \end{align}
+
+        where $a(\vecr)$ is amplitude, $\varphi(\vecr)$ is phase, $\nu$ is frequency(Hz), \\
+        $2\pi \nu =: \omega$ is angular frequency(rad$\cdot s^{-1}$)
+
+        \underline{Complex notation}\\
+        Very useful: complex representation of $u(\vecr,t)$ from eq.\ref{tag: 2.5}
+        \begin{align}
+            u(\vecr,t) = a(\vecr)e^{i\varphi(\vecr)}e^{i\omega t} \labtag{2.6}\nn
+            \rightarrow u(\vecr,t) = \mathbf{R}\left\{ u(\vecr,t) \right\} = \frac{1}{2}(u + u^*) \labtag{2.7}
+        \end{align}
+
+        $u(\vecr,t)$ is complex wave function
+
+        Wave equation:
+        \begin{align}
+            \nabla^2 u(\vecr,t) - \frac{1}{c}\partialtt u(\vecr,t) = 0 \labtag{2.8}
+        \end{align}
+
+        Note: $u(\vecr,t)$ have to fulfill the same boundary conditions.
+
+        \underline{Complex amplitude}\\
+        Rewrite
+        \begin{align}
+            u(\vecr,t) = u(\vecr) e^{i\omega t} \labtag{2.9}
+        \end{align}
+
+        where $u(\vecr) = a(\vecr) e^{i\varphi(\vecr)}$ is complex amplitude.
+
+        N.B.: At a given position $\vecr$, $\abs{u(\vecr)} = a(\vecr)$ is the amplitude and $\arg(u(\vecr)) = \varphi(\vecr)$ the phase of the wave.
+
+        \fig{0.5}{ex_fosvl2_9}{9}{}
+
+        \underline{The Helmholtz equatuion}\\
+        Insert $u(\vecr,t)$ from eq.\ref{tag: 2.3} into wave eq.\ref{tag: 2.8}, one gets Helmholtz equation
+        \begin{align}
+            \rightarrow (\nabla^2 + k^2)u(\vecr,t) = 0 \labtag{2.10}
+        \end{align}
+        where $k = \frac{2\pi \nu}{c} = \frac{\omega}{c}$ is wave number.
+
+        \underline{Optical intensity}\\
+        \begin{align}
+            2 u^(\vecr,t) = 2a^2(\vecr) \cos^2(\omega t + \varphi(\vecr)) \nn
+            = \abs{u(\vecr)}^2 \left[ 1 + \cos\left( 2(\omega t + \varphi(\vecr))\right)\right] \nonumber
+        \end{align}
+
+        where $\cos\left( 2(\omega t + \varphi(\vecr))\right) = 0 $when averaging
+        \begin{align}
+            \rightarrow I(\vecr) = \abs{u(\vecr)}^2 \labtag{2.11}
+        \end{align}
+
+        Optical intensity of a monochromatic wave is modules squared of the complex amplitude
+        
+        N.B.: The intensity of a monochromatic wave is constant in time.
+
+        \underline{Wave fronts}\\
+        Wave fronts is surface of equal phase
+        \begin{align}
+            \varphi(\vecr) = \text{const.} \labtag{2.12}
+        \end{align}
+
+        \fig{0.5}{ex_fosvl2_10}{10}{        e.g. $\varphi(\vecr) = 2\pi q $ with $q\in\mathbb{Z}$        }
 
 
 
