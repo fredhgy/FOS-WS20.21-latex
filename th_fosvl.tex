@@ -565,6 +565,8 @@
             \veck \times \vece_0 \txtoneq{!} \mp \omega \vecb_0 \labtag{I.51}
         \end{align}
 
+
+
         
 
 
@@ -572,6 +574,102 @@
 
 
 
+
+\lecture{5}{20.11.06}{Prof. Alejandro Saenz}{Guangyu He}{Fundamentals of Optical Sciences:theory part}{WS 2020/21}
+see screen cut at \# 11:20-11:22
+
+Convention!
+\begin{align}
+    \veck \times \vece_0 = + \omega \vecb_0 \labtag{I.58a} \\
+    \veck \times \vecb_0 = - \frac{\omega}{u^2} \vece_0 \labtag{I.58b}
+\end{align}
+
+This convention leads to the wave-vector being parallel(and not antiparallel) to the propagation direction.
+
+$\vece,\vecb$ and $\veck$ form a right-hand system.
+
+\# 11:25
+
+electromagnetic radiation: transversal waves, i.e. the $\vece$ and $\vecb$ field are orthogonal to the propagation direction.
+
+While physical observable are real and thus only the real solution $\tilde{f}_\pm$ are proper solutions for physical observables like the $\vece$ and the $\vecb$ field, 
+it is nevertheless from the mathematical ! point of view often convenient to use the complex solution $f_\pm$ instead.
+
+{\bf The observables is obtained from the complex function f by considering its real part(not its absolute value!)}
+
+Note, while $\vece$ and $\vecb$ are bound to be orthogonal to $\veck$, and to each other, within their plane, $\vece$ and $\vecb$ can be oriented arbitrarily $\Rightarrow$ polarization.
+
+Consider $\veck // \hate_z$
+\begin{align}
+    \rightarrow E_{0x} = \abs{E_{0x}}\cdot e^{i\phi_0} \text{   and     } E_{0y} = \abs{E_{0y}}\cdot e^{i(\phi_0 + \delta)} \nn
+    \rightarrow E_{0x} = \abs{E_{0x}}\cdot \cos(k_z - \omega t + \phi_0) \cdot \hate_x + E_{0x} = \abs{E_{0y}}\cdot \cos(k_z - \omega t + \phi_0 + \delta) \cdot \hate_y \labtag{I.59}
+\end{align}
+
+here, $\delta$ is te relative phase between the x and the y components of $\vece$.
+
+Thus in the complex representation of electromagnetic fields, this relative phase $\delta$ defines the polarization of the field.
+
+(I). $\delta = 0$ pr $\pm \pi$: linear polarization
+\begin{align}
+    \vece = \left(\abs{E_{0x}}\hate_x \pm \abs{E_{0y}}\hate_y\right) \cdot \cos(kz - \omega t + \phi_0) \labtag{I.60}\\
+    \abs{\vece} = \sqrt{\abs{E_{0x}}^2 + \abs{E_{0y}}^2} \labtag{I.61}
+\end{align}
+
+remaind: $\abs{E_{0x}}$ and $\abs{E_{0y}}$are independent on $\vecr$ and $t$ $\rightarrow$ constant. see screen shot at \# 11:56
+
+While the direction of the $\vece$ field is in this case fixed(within the x,y plane), its values is modulated by the cos(...) and thus varies periodically from -1 to +1(in space and time).
+
+(II). $\delta = \pm \frac{\pi}{2}$ and $\abs{E_{0x}} = \abs{E_{0y}} =: E_0$: circular polarization
+\begin{align}
+    \vece = \vece_0 \left[\cos(kz - \omega t + \phi_0)\hate_x \mp \sin(kz-\omega t +\phi_0)\hate_y\right] \labtag{I.62}
+\end{align}
+Seen at a fixed point in space, eq\ref{tag: I.26} corresponds to the parametrization of a circle, and the $\vece$ field vector rotates with $\omega$ in either positive or negative direction. screenshot at \# 12:07
+
+(III). $\delta = \pm \frac{\pi}{2}, \abs{E_{0x}} \neq \abs{E_{0y}}$: elliptical polarization
+
+(IV). 
+
+Note: it is really important that you get a feeling for polarizations "playing" around with them, for example using a program like EMANIM.
+
+There is different ways to specify the polarization, since in the end of the day one has to fix only two components of a vector in the plane orthogonal to the propagation direction. 
+In the complex representation this was done using $\abs{E_{0x}}$ and $\abs{E_{0y}}$.\\
+One other representation for the polarization only is the one via Jones matrices.
+
+In this case there presentation is done via a normalized! 2-d vector see \# 12:28-33
+
+Note: for linear polarization the Jones vectors are real, fo elliptical or circular polarization they are complex.
+
+Example fpr tje usefulness of the Jones matrices: consider the superposition of a left and a right circular polarized wave:
+\begin{align}
+    \frac{1}{\sqrt{2}} \left(\begin{matrix}
+        1 \\
+        i
+    \end{matrix}\right) + \frac{1}{\sqrt{2}} \left(\begin{matrix}
+        1 \\
+        -i
+    \end{matrix}\right) = \sqrt{2} \left(\begin{matrix}
+        1 \\
+        0
+    \end{matrix}\right) \rightarrow \left(\begin{matrix}
+        1 \\
+        0
+    \end{matrix}\right) \nonumber
+\end{align}
+
+Consider now the general form of electromagnetic waves that are solutions of the m.w.e(but remind that the full solutions depend on the boundary conditions!):
+\begin{align}
+    \vece(\vecr,t) = \vece_0\cdot e^{i(\veck\vecr-\omega t + \phi_0)} = \vece_0 \cdot e^{i(\veck\vecr-\omega t + \phi_0) }\cdot\hate_E \labtag{I.66a} \\
+    \vecb(\vecr,t) = \vecb_0\cdot e^{i(\veck\vecr-\omega t + \phi_0)} = \frac{E_0}{u} \cdot e^{i(\veck\vecr-\omega t + \phi_0)}\cdot(\hate_k\times\hate_E) \labtag{I.66b}
+\end{align}
+
+energy density $w$ of the em field represented by eq\ref{tag: I.66a}and \ref{I.66b}
+\begin{align}
+    w_{\text{EB}} = \frac{1}{2}\left[(\vece\cdot\vecd) + (\vech\cdot\vecb)\right] \labtag{I.67}
+\end{align}
+in a linear homogeneous medium
+\begin{align}
+    w_{\text{EB}} = \frac{1}{2}\left[\varepsilon\vece^2 + \frac{1}{\mu\vecb^2}\right] \labtag{I.68}
+\end{align}
 
 
 \end{document}
